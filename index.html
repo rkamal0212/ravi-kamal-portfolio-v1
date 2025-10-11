@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Ravi Kamal - Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ravi Kamal - Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <nav>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav aria-label="Main navigation">
         <ul>
+            <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#internships">Internships</a></li>
@@ -20,11 +21,13 @@
             <li><a href="#interests">Interests</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#resume">Resume</a></li>
-            <li><button id="dark-mode-toggle" title="Toggle dark mode">☼</button></li>
+            <li>
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode" aria-pressed="false">☼</button>
+            </li>
         </ul>
     </nav>
 
-    <main>
+    <main id="main-content">
         <section class="centered-title">
             <h1>Ravi Kamal</h1>
         </section>
@@ -32,25 +35,22 @@
         <section id="about" class="container">
             <h2>About Me</h2>
             <p>
-                I am a recent graduate in Information Science and Engineering, starting my career as a Frontend
-                Developer.
+                I am a recent graduate in Information Science and Engineering, starting my career as a Frontend Developer.
                 I hold a certification in AWS Certified Cloud Practitioner from Amazon Web Services.
-                I am motivated to learn continuously, build user-friendly applications, and contribute to impactful
-                projects.
-                Beyond my professional journey, I enjoy exploring new hobbies and activities that keep me creative and
-                balanced.
+                I am motivated to learn continuously, build user-friendly applications, and contribute to impactful projects.
+                Beyond my professional journey, I enjoy exploring new hobbies and activities that keep me creative and balanced.
             </p>
         </section>
 
         <section id="skills" class="container">
             <h2>Technical Skills</h2>
-            <div class="card">
-                <strong>Languages:</strong> Python<br>
-                <strong>Web Technologies:</strong> HTML, CSS, JavaScript<br>
-                <strong>Databases:</strong> MySQL<br>
-                <strong>Cloud & Tools:</strong> AWS, Azure, Git, GitHub, Linux Ubuntu<br>
-                <strong>DevOps:</strong> CI/CD, Docker basics, Version Control
-            </div>
+            <ul class="skills-list">
+                <li><strong>Languages:</strong> Python</li>
+                <li><strong>Web Technologies:</strong> HTML, CSS, JavaScript</li>
+                <li><strong>Databases:</strong> MySQL</li>
+                <li><strong>Cloud & Tools:</strong> AWS, Azure, Git, GitHub, Linux Ubuntu</li>
+                <li><strong>DevOps:</strong> CI/CD, Docker basics, Version Control</li>
+            </ul>
         </section>
 
         <section id="projects" class="container">
@@ -79,10 +79,8 @@
             <div class="card">
                 <h3>Azure Cloud Intern – Verzeo Edutech</h3>
                 <p>
-                    Worked with Microsoft Azure portal to understand cloud resources, virtual machines, and storage
-                    accounts.
-                    Deployed a sample application on Azure App Service and integrated Azure Blob Storage for file
-                    handling.
+                    Worked with Microsoft Azure portal to understand cloud resources, virtual machines, and storage accounts.
+                    Deployed a sample application on Azure App Service and integrated Azure Blob Storage for file handling.
                     Explored virtual networks, resource monitoring, and cost estimation features in Azure.
                 </p>
             </div>
@@ -91,8 +89,7 @@
                 <p>
                     Led a team project to develop a personal portfolio generator for students and colleges.
                     Designed and built the frontend using HTML, CSS, JavaScript, and connected it to a MySQL database.
-                    Delivered a responsive, user-friendly interface and ensured smooth integration between frontend and
-                    backend.
+                    Delivered a responsive, user-friendly interface and ensured smooth integration between frontend and backend.
                 </p>
             </div>
         </section>
@@ -109,46 +106,43 @@
 
         <section id="education" class="container">
             <h2>Education</h2>
-            <strong>Degree:</strong> B.E. in Information Science and Engineering, AMC Engineering College<br>
-            <strong>High School:</strong> Techno Mission International School<br>
-            <strong>Schooling:</strong> Happy Valley School
+            <p><strong>Degree:</strong> B.E. in Information Science and Engineering, AMC Engineering College</p>
+            <p><strong>High School:</strong> Techno Mission International School</p>
+            <p><strong>Schooling:</strong> Happy Valley School</p>
         </section>
 
-        <section id="testimonials" class="container card testimonial-card">
+        <section id="testimonials" class="container">
             <h2>Testimonials</h2>
-            <p>"Ravi is a highly dedicated intern who showed excellent skills in Azure management and development."</p>
-            <p><em>- Mentor, Verzeo Edutech</em></p>
-            <p>"Ravi led the team effectively for our portfolio generator project, showing great leadership and
-                technical skills."</p>
-            <p><em>- Supervisor, Tequed Lab</em></p>
+            <blockquote class="testimonial-card">
+                <p>"Ravi is a highly dedicated intern who showed excellent skills in Azure management and development."</p>
+                <footer><cite>- Mentor, Verzeo Edutech</cite></footer>
+            </blockquote>
+            <blockquote class="testimonial-card">
+                <p>"Ravi led the team effectively for our portfolio generator project, showing great leadership and technical skills."</p>
+                <footer><cite>- Supervisor, Tequed Lab</cite></footer>
+            </blockquote>
         </section>
 
         <section id="interests" class="container">
             <h2>Interests</h2>
-            Learning new skills | Chess | Tennis | Cricket
+            <p>Learning new skills | Chess | Tennis | Cricket</p>
         </section>
 
         <section id="contact" class="container">
             <h2>Contact Me</h2>
-            Bengaluru, India<br>
-            <strong>Email:</strong> <a class="contact-btn"
-                href="mailto:ravikamal77777@gmail.com">ravikamal77777@gmail.com</a><br>
-            <strong>Phone:</strong> +91 7543884205<br>
-            <strong>LinkedIn:</strong> <a class="contact-btn" href="https://www.linkedin.com/in/ravi-kamal-19195615a"
-                target="_blank" rel="noopener">linkedin.com/in/ravi-kamal-19195615a</a><br><br>
+            <p><strong>Location:</strong> Bengaluru, India</p>
+            <p><strong>Email:</strong> <a class="contact-btn" href="mailto:ravikamal77777@gmail.com">ravikamal77777@gmail.com</a></p>
+            <p><strong>Phone:</strong> +91 7543884205</p>
+            <p><strong>LinkedIn:</strong> <a class="contact-btn" href="https://www.linkedin.com/in/ravi-kamal-19195615a" target="_blank" rel="noopener">linkedin.com/in/ravi-kamal</a></p>
         </section>
 
         <section id="resume" class="container">
             <h2>Download Resume</h2>
-            <div>
-                You can download my resume here:<br>
-                <a href="Ravi-kamal-Resume1-1-1.pdf" download class="resume-btn">Download Resume</a>
-            </div>
+            <p>You can download my resume:</p>
+            <a href="Ravi-kamal-Resume1-1-1.pdf" download class="resume-btn">Download Resume</a>
         </section>
     </main>
 
     <script src="script.js"></script>
 </body>
-
-
 </html>
