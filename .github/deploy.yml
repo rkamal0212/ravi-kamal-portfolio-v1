@@ -1,0 +1,27 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+
+    - name: Set up SSH key
+      run: |
+        echo "${{ secrets.EC2_KEY }}" > private_key.pem
+        chmod 600 private_key.pem
+
+    - name: Deploy to EC2 (Pull & Restart Container)
+      run: |
+        ssh -o StrictHostKeyChecking=no -i private_key.pem ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          sudo docker pull ravikamal0212/portfolio-image:latest
+          sudo docker stop portfolio || true
+          sudo docker rm portfolio || true
+          sudo docker run -d --name portfolio -p 80:80 ravikamal0212/portfolio-image:latest
+        EOF
